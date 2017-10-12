@@ -415,3 +415,14 @@ processButtons.push(
 	}
 );
 
+processButtons.push(
+    function average(imageData) {
+        var data = imageData.data;
+        for (var i = 0; i < data.length; i += 4) {
+			    data[i] = data[i+1]			// red
+				data[i + 1] = data[i + 2];	// green
+				data[i + 2] = data[i];		// blue
+		}
+        return imageData;
+    }
+);
